@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install primevue)",
+      "Bash(npm install @primevue/themes)",
+      "WebFetch(domain:unsplash.com)"
+    ]
+  }
+}
