@@ -39,7 +39,7 @@ const activeItem = ref("home");
       </div>
       <div class="mt-auto flex justify-center pb-[20vh]">
         <a
-          class="px-8 py-6 border text-2xl text-white/70 border-white/50 rounded-md transition duration-300 ease-in-out font-light hover:text-white hover:border-white"
+          class="px-8 py-6 border text-xl text-white/70 border-white/50 rounded-md transition duration-300 ease-in-out font-light hover:text-white hover:border-white"
           >see my projects</a
         >
       </div>
