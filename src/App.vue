@@ -6,7 +6,7 @@ import TheFooter from "./components/TheFooter.vue";
 </script>
 
 <template>
-  <div class="bg-[#0A0A0A]">
+  <div class="bg-base">
     <TheMenu></TheMenu>
     <AboutMe></AboutMe>
     <PortfolioProject></PortfolioProject>

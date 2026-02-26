@@ -5,7 +5,7 @@
       :alt="project.title"
       class="rounded-t-lg"
     />
-    <Panel :header="project.title" toggleable>
+    <Panel :header="project.title" toggleable collapsed="false">
       <div class="flex flex-row items-start">
         <div class="p-6 pr-10">
           <template v-for="section in project.sections" :key="section.heading">

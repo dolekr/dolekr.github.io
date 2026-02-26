@@ -1,8 +1,16 @@
 <script setup lang="ts">
 import bgImage from "../assets/andrew-kliatskyi-ZceT2m9wV7w-unsplash.jpg";
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const activeItem = ref("home");
+const scrolled = ref(false);
+
+function onScroll() {
+  scrolled.value = window.scrollY > 0;
+}
+
+onMounted(() => window.addEventListener("scroll", onScroll));
+onUnmounted(() => window.removeEventListener("scroll", onScroll));
 </script>
 
 <template>
@@ -11,7 +19,8 @@ const activeItem = ref("home");
     :style="{ backgroundImage: `url(${bgImage})` }"
   >
     <nav
-      class="flex w-full items-center justify-end pl-[8vw] pr-[4vw] h-18 fixed"
+      class="flex w-full items-center justify-end pl-[8vw] pr-[4vw] h-18 fixed z-50 transition duration-300 ease-in-out"
+      :class="scrolled ? 'bg-black/50 backdrop-blur-sm shadow-lg' : ''"
     >
       <ul class="flex gap-4 list-none">
         <li
@@ -33,7 +42,7 @@ const activeItem = ref("home");
       </ul>
     </nav>
     <div class="flex-1 flex flex-col px-[8vw] pt-[16vh]">
-      <div class="text-[clamp(2rem,10vw,6rem)] text-[#00FF44]/70">
+      <div class="text-[clamp(2rem,10vw,6rem)] text-brand/70">
         <div class="uppercase font-zilla tracking-widest">Kristyna</div>
         <div class="uppercase font-zilla tracking-widest">Dolezalova</div>
       </div>
