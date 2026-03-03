@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: var(--p-green-500);
+  --color-brand: var(--p-teal-500);
   --color-base: #0A0A0A;
 }
 @import 'primeicons/primeicons.css';
+
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   font-family: 'Jost', system-ui, sans-serif;

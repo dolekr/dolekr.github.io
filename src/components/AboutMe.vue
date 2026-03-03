@@ -1,8 +1,9 @@
 <template>
   <div
+    id="about"
     class="flex flex-col sm:flex-row items-center justify-center px-6 sm:px-[3vw] py-16 bg-white relative overflow-hidden"
   >
-    <div class="sm:w-2/3 sm:pr-10 max-w-md text-base text-justify mb-10">
+    <div class="sm:w-2/3 sm:pr-16 max-w-md text-base text-justify mb-10">
       <h1>About</h1>
       <p>
         My path into UX started in software testing at a company building mobile
@@ -21,7 +22,7 @@
     <div class="sm:w-1/3 flex justify-center items-center">
       <div class="relative group">
         <div
-          class="absolute -left-10 inset-y-4 z-10 bg-brand/40 w-20 transition-transform duration-500 origin-center group-hover:scale-x-50"
+          class="absolute -left-6 inset-y-4 z-10 bg-brand/40 w-12 transition-transform duration-500 origin-center group-hover:scale-x-50"
         ></div>
         <img
           src="../assets/pfp.jpg"
