@@ -4,7 +4,7 @@
     class="flex flex-col items-center justify-center px-6 sm:px-[3vw] pt-18 text-white relative overflow-hidden"
   >
     <div class="flex mb-10">
-      <h1>Projects</h1>
+      <h2>Projects</h2>
     </div>
     <ProjectCard
       v-for="project in projects"
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Unizone – University App",
     sideImages: true,
-    heroImage: "unizone.png",
+    heroImage: "uni.png",
     detailImages: ["uni-1.png", "uni-3.png", "uni-5.png", "uni-6.png"],
     sections: [
       {

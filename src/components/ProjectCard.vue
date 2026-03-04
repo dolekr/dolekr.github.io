@@ -1,5 +1,8 @@
 <template>
-  <div class="card flex flex-col max-w-5xl mx-auto pb-16" :id="project.anchor">
+  <div
+    class="card flex flex-col max-w-5xl mx-auto pb-8 md:pb-16"
+    :id="project.anchor"
+  >
     <img
       :src="resolveImage(project.heroImage)"
       :alt="project.title"
@@ -12,7 +15,7 @@
       >
         <div class="sm:p-6">
           <template v-for="section in project.sections" :key="section.heading">
-            <h2 class="text-2xl pb-1">{{ section.heading }}</h2>
+            <h3 class="pb-1">{{ section.heading }}</h3>
             <p class="m-0 pb-4">{{ section.content }}</p>
             <a
               v-if="section.link"

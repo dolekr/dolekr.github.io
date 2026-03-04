@@ -4,7 +4,7 @@
     class="flex flex-col sm:flex-row items-center justify-center px-6 sm:px-[3vw] py-16 bg-white relative overflow-hidden"
   >
     <div class="sm:w-2/3 sm:pr-16 max-w-md text-base text-justify mb-10">
-      <h1>About</h1>
+      <h2>About</h2>
       <p>
         My path into UX started in software testing at a company building mobile
         and web apps for universities — used by tens of thousands of students.
