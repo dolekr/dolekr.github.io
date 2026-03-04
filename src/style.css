@@ -42,4 +42,9 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-} text-2xl
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: #fff;
+}
