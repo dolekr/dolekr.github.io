@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import bgImage from "../assets/andrew-kliatskyi-ZceT2m9wV7w-unsplash.jpg";
 import { ref, onMounted, onUnmounted } from "vue";
 
 const activeItem = ref("home");
@@ -40,8 +39,7 @@ onUnmounted(() => {
 <template>
   <div
     id="home"
-    class="flex flex-col h-screen w-full bg-cover bg-center"
-    :style="{ backgroundImage: `url(${bgImage})` }"
+    class="hero-bg flex flex-col h-screen w-full"
   >
     <nav
       class="flex w-full items-center justify-center sm:justify-end pl-[8vw] pr-[4vw] h-14 fixed z-50 transition duration-300 ease-in-out"
@@ -85,3 +83,14 @@ onUnmounted(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.hero-bg {
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 85%, rgba(20, 184, 166, 0.13) 0%, transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    #0a0a0a;
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+</style>
