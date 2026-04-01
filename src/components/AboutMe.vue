@@ -1,10 +1,12 @@
 <template>
   <div
     id="about"
-    class="flex flex-col sm:flex-row items-center justify-center px-6 sm:px-[3vw] py-16 bg-white relative overflow-hidden"
+    class="about-bg flex flex-col sm:flex-row items-center justify-center px-6 sm:px-[3vw] py-16 relative overflow-hidden"
   >
-    <div class="sm:w-2/3 sm:pr-16 max-w-md text-base text-justify mb-10">
-      <h2>About</h2>
+    <div
+      class="sm:w-2/3 sm:pr-16 max-w-md text-base text-justify mb-10 text-white/70"
+    >
+      <h2 class="text-white">About</h2>
       <p>
         My path into UX started in software testing at a company building mobile
         and web apps for universities — used by tens of thousands of students.
@@ -22,7 +24,7 @@
     <div class="sm:w-1/3 flex justify-center items-center">
       <div class="relative group">
         <div
-          class="absolute -left-6 inset-y-4 z-10 bg-brand/40 w-12 transition-transform duration-500 origin-center group-hover:scale-x-50"
+          class="absolute -left-6 inset-y-4 z-10 bg-brand/20 w-12 transition-transform duration-500 origin-center group-hover:scale-x-50"
         ></div>
         <img
           src="../assets/pfp.jpg"
@@ -31,8 +33,21 @@
         />
       </div>
     </div>
-    <ScrollTop class="bg-white" />
+    <ScrollTop />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.about-bg {
+  background: #0a0a0a;
+}
+
+:deep(.p-scrolltop) {
+  --p-scrolltop-background: rgba(255, 255, 255, 0.07);
+  --p-scrolltop-hover-background: rgba(20, 184, 166, 0.2);
+  --p-scrolltop-color: rgba(255, 255, 255, 0.6);
+  --p-scrolltop-hover-color: rgba(20, 184, 166, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+</style>
