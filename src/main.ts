@@ -21,23 +21,25 @@ const MyPreset = definePreset(Aura, {
   },
 })
 import Button from 'primevue/button'
-import Menubar from 'primevue/menubar';
-import Panel from 'primevue/panel';
-import Image from 'primevue/image';
-import Divider from 'primevue/divider';
-import ScrollTop from 'primevue/scrolltop';
+import Menubar from 'primevue/menubar'
+import Panel from 'primevue/panel'
+import Image from 'primevue/image'
+import Divider from 'primevue/divider'
+import ScrollTop from 'primevue/scrolltop'
 
 import './style.css'
 import App from './App.vue'
+import router from './router'
 
 const app = createApp(App)
 app.use(PrimeVue, { theme: { preset: MyPreset } })
+app.use(router)
 
 app.component('Button', Button)
 app.component('Menubar', Menubar)
 app.component('Panel', Panel)
 app.component('Image', Image)
 app.component('Divider', Divider)
-app.component('ScrollTop',ScrollTop)
+app.component('ScrollTop', ScrollTop)
 
 app.mount('#app')

@@ -61,3 +61,12 @@ defineProps({
   },
 });
 </script>
+
+<style scoped>
+h3 {
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+</style>

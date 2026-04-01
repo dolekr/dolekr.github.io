@@ -38,10 +38,16 @@ body {
 
 h2 {
   font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 ::selection {
