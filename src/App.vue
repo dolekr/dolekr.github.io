@@ -6,6 +6,7 @@ const route = useRoute()
 const router = useRouter()
 const activeItem = ref('home')
 const scrolled = ref(false)
+const pendingScroll = ref<string | null>(null)
 
 const sectionItems = ['home', 'about', 'projects', 'contact']
 const allNavItems = ['home', 'about', 'projects', 'resume']
@@ -45,6 +46,8 @@ watch(
   { flush: 'post' },
 )
 
+let removeAfterEach: (() => void) | null = null
+
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
   if (route.path === '/resume') {
@@ -52,22 +55,32 @@ onMounted(() => {
   } else {
     setupObserver()
   }
+
+  removeAfterEach = router.afterEach((to) => {
+    if (to.path === '/' && pendingScroll.value) {
+      const target = pendingScroll.value
+      pendingScroll.value = null
+      // setTimeout(0) ensures all child components have mounted their DOM elements
+      setTimeout(() => {
+        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
+      }, 0)
+    }
+  })
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
   observer?.disconnect()
+  removeAfterEach?.()
 })
 
-// Always use router/scroll APIs — never a bare href — to avoid full page reloads
 function handleSectionClick(item: string) {
   activeItem.value = item
   if (route.path === '/') {
-    // Already on home: just smooth-scroll to the section
     document.getElementById(item)?.scrollIntoView({ behavior: 'smooth' })
   } else {
-    // On another page (e.g. /resume): SPA-navigate to home then scroll
-    router.push({ path: '/', hash: '#' + item })
+    pendingScroll.value = item
+    router.push({ path: '/' })
   }
 }
 

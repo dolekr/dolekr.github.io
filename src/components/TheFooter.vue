@@ -11,10 +11,10 @@ function copyEmail() {
 </script>
 
 <template>
-  <Divider />
+  <div class="h-px bg-linear-to-r from-transparent via-brand/25 to-transparent"></div>
   <div
     id="contact"
-    class="flex items-center justify-center px-6 sm:px-[3vw] py-2 flex-col"
+    class="flex items-center justify-center px-6 sm:px-[3vw] pt-6 pb-2 flex-col"
   >
     <div class="flex max-w-md text-white">
       <h3 class="mb-2">Contact</h3>

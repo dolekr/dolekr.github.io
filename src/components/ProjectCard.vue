@@ -64,9 +64,32 @@ defineProps({
 
 <style scoped>
 h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: normal;
-  text-transform: none;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
 }
 
+h3::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background: rgba(20, 184, 166, 0.45);
+  flex-shrink: 0;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+
+:deep(.p-image img),
+:deep(.p-image-preview img) {
+  border-radius: 0.5rem;
+}
 </style>

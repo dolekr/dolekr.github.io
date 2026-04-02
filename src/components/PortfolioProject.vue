@@ -3,7 +3,7 @@
     id="projects"
     class="flex flex-col items-center justify-center px-6 sm:px-[3vw] pt-18 text-white relative overflow-hidden"
   >
-    <div class="flex mb-10">
+    <div class="flex">
       <h2>Projects</h2>
     </div>
     <ProjectCard
