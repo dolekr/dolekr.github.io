@@ -19,11 +19,21 @@ const MyPreset = definePreset(Aura, {
       950: '{teal.950}',
     },
   },
+  components: {
+    galleria: {
+      navButton: {
+        background: 'transparent',
+        hoverBackground: 'transparent',
+        color: '{surface.400}',
+        hoverColor: '{surface.200}',
+      },
+    },
+  },
 })
 import Button from 'primevue/button'
 import Menubar from 'primevue/menubar'
 import Panel from 'primevue/panel'
-import Image from 'primevue/image'
+import Galleria from 'primevue/galleria'
 import Divider from 'primevue/divider'
 import ScrollTop from 'primevue/scrolltop'
 
@@ -38,7 +48,7 @@ app.use(router)
 app.component('Button', Button)
 app.component('Menubar', Menubar)
 app.component('Panel', Panel)
-app.component('Image', Image)
+app.component('Galleria', Galleria)
 app.component('Divider', Divider)
 app.component('ScrollTop', ScrollTop)
 

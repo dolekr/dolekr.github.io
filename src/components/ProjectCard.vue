@@ -39,21 +39,36 @@
             class="grid grid-cols-2 gap-4 sm:p-6 mt-4 sm:mt-0 ml-auto items-center min-w-[40%]"
             :class="project.sideImages ? 'md:grid-cols-1' : 'md:grid-cols-2'"
           >
-            <Image
-              v-for="img in project.detailImages"
+            <img
+              v-for="(img, index) in project.detailImages"
               :key="img"
               :src="resolveImage(img)"
               :alt="img"
-              preview
-              :pt="{
-                rotateRightButton: { style: 'display: none' },
-                rotateLeftButton: { style: 'display: none' },
-              }"
+              class="rounded-lg cursor-zoom-in"
+              @click="openGallery(index)"
             />
           </div>
         </div>
       </Panel>
     </div>
+    <Galleria
+      v-model:visible="galleryVisible"
+      v-model:activeIndex="activeIndex"
+      :value="project.detailImages"
+      fullScreen
+      circular
+      showItemNavigators
+      :showThumbnails="false"
+      :pt="{ mask: { onClick: closeOnBackdrop } }"
+    >
+      <template #item="{ item }">
+        <img
+          :src="resolveImage(item)"
+          :alt="item"
+          class="max-w-[90vw] max-h-[90vh] rounded-lg"
+        />
+      </template>
+    </Galleria>
   </div>
 </template>
 
@@ -75,6 +90,20 @@ defineProps({
 });
 
 const expanded = ref(false);
+const galleryVisible = ref(false);
+const activeIndex = ref(0);
+
+/** Opens the full-screen gallery at the clicked picture. */
+function openGallery(index) {
+  activeIndex.value = index;
+  galleryVisible.value = true;
+}
+
+/** Closes the gallery on a click anywhere except the picture or its buttons. */
+function closeOnBackdrop(event) {
+  if (event.target.closest("img, button")) return;
+  galleryVisible.value = false;
+}
 
 /** Opens the card on any click, except on the panel's own toggle button, which handles itself. */
 function openFromCard(event) {
@@ -110,10 +139,5 @@ h3::after {
 p {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
-}
-
-:deep(.p-image img),
-:deep(.p-image-preview img) {
-  border-radius: 0.5rem;
 }
 </style>
