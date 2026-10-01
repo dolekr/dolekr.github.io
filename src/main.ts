@@ -21,6 +21,9 @@ const MyPreset = definePreset(Aura, {
   },
   components: {
     galleria: {
+      root: {
+        borderWidth: '0',
+      },
       navButton: {
         background: 'transparent',
         hoverBackground: 'transparent',
