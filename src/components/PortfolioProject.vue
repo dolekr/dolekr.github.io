@@ -10,15 +10,21 @@
       v-for="project in projects"
       :key="project.title"
       :project="project"
+      :expanded="openTitle === project.title"
+      @open="openTitle = project.title"
+      @close="openTitle = null"
       class="reveal"
     />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import ProjectCard from "./ProjectCard.vue";
 import { useReveal } from "../composables/useReveal";
 useReveal();
+
+const openTitle = ref(null);
 
 const projects = [
   {
@@ -191,7 +197,6 @@ const projects = [
 :deep(.p-panel-header) {
   font-size: large;
   --p-panel-title-font-weight: 300;
-  --p-panel-header-background: #111111;
   --p-panel-header-border-color: rgba(255, 255, 255, 0.08);
   --p-panel-header-color: rgba(255, 255, 255, 0.75);
 }

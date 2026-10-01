@@ -3,46 +3,57 @@
     class="card flex flex-col max-w-5xl mx-auto pb-8 md:pb-16"
     :id="project.anchor"
   >
-    <img
-      :src="resolveImage(project.heroImage)"
-      :alt="project.title"
-      class="rounded-t-lg"
-    />
-    <Panel :header="project.title" toggleable :collapsed="true">
-      <div
-        class="flex flex-col items-start"
-        :class="{ 'md:flex-row': project.sideImages }"
+    <div
+      class="rounded-lg transition duration-300 ease-out hover:scale-[1.015] hover:shadow-[0_0_32px_rgba(20,184,166,0.35)]"
+      :class="{ 'cursor-pointer': !expanded }"
+      @click="openFromCard"
+    >
+      <img
+        :src="resolveImage(project.heroImage)"
+        :alt="project.title"
+        class="rounded-t-lg"
+      />
+      <Panel
+        :header="project.title"
+        toggleable
+        :collapsed="!expanded"
+        @update:collapsed="(collapsed) => emit(collapsed ? 'close' : 'open')"
       >
-        <div class="sm:p-6">
-          <template v-for="section in project.sections" :key="section.heading">
-            <h3 class="pb-1">{{ section.heading }}</h3>
-            <p class="m-0 pb-4">{{ section.content }}</p>
-            <a
-              v-if="section.link"
-              :href="section.link.href"
-              class="block -mt-2 pb-4 text-brand/70 hover:text-brand transition duration-200 text-sm"
-              >{{ section.link.text }}</a
-            >
-          </template>
-        </div>
         <div
-          class="grid grid-cols-2 gap-4 sm:p-6 mt-4 sm:mt-0 ml-auto items-center min-w-[40%]"
-          :class="project.sideImages ? 'md:grid-cols-1' : 'md:grid-cols-2'"
+          class="flex flex-col items-start"
+          :class="{ 'md:flex-row': project.sideImages }"
         >
-          <Image
-            v-for="img in project.detailImages"
-            :key="img"
-            :src="resolveImage(img)"
-            :alt="img"
-            preview
-            :pt="{
-              rotateRightButton: { style: 'display: none' },
-              rotateLeftButton: { style: 'display: none' },
-            }"
-          />
+          <div class="sm:p-6">
+            <template v-for="section in project.sections" :key="section.heading">
+              <h3 class="pb-1">{{ section.heading }}</h3>
+              <p class="m-0 pb-4">{{ section.content }}</p>
+              <a
+                v-if="section.link"
+                :href="section.link.href"
+                class="block -mt-2 pb-4 text-brand/70 hover:text-brand transition duration-200 text-sm"
+                >{{ section.link.text }}</a
+              >
+            </template>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-4 sm:p-6 mt-4 sm:mt-0 ml-auto items-center min-w-[40%]"
+            :class="project.sideImages ? 'md:grid-cols-1' : 'md:grid-cols-2'"
+          >
+            <Image
+              v-for="img in project.detailImages"
+              :key="img"
+              :src="resolveImage(img)"
+              :alt="img"
+              preview
+              :pt="{
+                rotateRightButton: { style: 'display: none' },
+                rotateLeftButton: { style: 'display: none' },
+              }"
+            />
+          </div>
         </div>
-      </div>
-    </Panel>
+      </Panel>
+    </div>
   </div>
 </template>
 
@@ -54,12 +65,27 @@ function resolveImage(filename) {
   return match ? match.default : "";
 }
 
-defineProps({
+const props = defineProps({
   project: {
     type: Object,
     required: true,
   },
+  expanded: {
+    type: Boolean,
+    default: false,
+  },
 });
+
+const emit = defineEmits(["open", "close"]);
+
+/** Opens the card on any click, except on the panel's own toggle button, which handles itself. */
+function openFromCard(event) {
+  const onToggle = event
+    .composedPath()
+    .some((el) => el.classList?.contains("p-panel-toggle-button"));
+  if (props.expanded || onToggle) return;
+  emit("open");
+}
 </script>
 
 <style scoped>
