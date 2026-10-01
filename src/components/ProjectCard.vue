@@ -4,7 +4,7 @@
     :id="project.anchor"
   >
     <div
-      class="rounded-lg transition duration-300 ease-out"
+      class="rounded-lg transition-transform duration-300 ease-out"
       :class="{
         'cursor-pointer hover:scale-[1.015] hover:shadow-[0_0_32px_rgba(20,184,166,0.35)]':
           !expanded,
