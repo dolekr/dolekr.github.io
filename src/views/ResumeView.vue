@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import TheFooter from "../components/TheFooter.vue";
 
-const profile = `Software tester with a background in frontend development, UX design, IT analysis, and project management. Working in a small development team has strengthened my sense of responsibility and communication skills. Having naturally taken on multiple roles in one team, I thrive in varied environments. Strong eye for detail, well suited to remote work. Currently expanding expertise in AI tools. Temporarily relocating to Canada from May 2026.`;
+const profile = `Software tester with a background in frontend development, UX design, IT analysis, and project management. Working in a small development team has strengthened my sense of responsibility and communication skills. Having naturally taken on multiple roles in one team, I thrive in varied environments. Strong eye for detail, well suited to remote work. Currently expanding expertise in AI tools.`;
 
 const experiences = [
   {
@@ -77,6 +77,11 @@ const experiences = [
 ];
 
 const education = [
+  {
+    year: "2026",
+    title: "Automated Software Testing with Playwright",
+    institution: "Udemy",
+  },
   { year: "2025", title: "Vue – The Complete Guide", institution: "Udemy" },
   { year: "2025", title: "The Web Developer Bootcamp", institution: "Udemy" },
   {
@@ -105,6 +110,7 @@ const skillGroups = [
       "Test case design & management",
       "Regression & exploratory testing",
       "REST API Testing (Postman)",
+      "Automated Testing (Playwright)",
       "Basic SQL / SSMS",
     ],
   },
