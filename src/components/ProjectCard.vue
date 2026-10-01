@@ -17,7 +17,7 @@
         :header="project.title"
         toggleable
         :collapsed="!expanded"
-        @update:collapsed="(collapsed) => emit(collapsed ? 'close' : 'open')"
+        @update:collapsed="(collapsed) => (expanded = !collapsed)"
       >
         <div
           class="flex flex-col items-start"
@@ -58,6 +58,8 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const images = import.meta.glob("../assets/*", { eager: true });
 
 function resolveImage(filename) {
@@ -65,26 +67,22 @@ function resolveImage(filename) {
   return match ? match.default : "";
 }
 
-const props = defineProps({
+defineProps({
   project: {
     type: Object,
     required: true,
   },
-  expanded: {
-    type: Boolean,
-    default: false,
-  },
 });
 
-const emit = defineEmits(["open", "close"]);
+const expanded = ref(false);
 
 /** Opens the card on any click, except on the panel's own toggle button, which handles itself. */
 function openFromCard(event) {
   const onToggle = event
     .composedPath()
     .some((el) => el.classList?.contains("p-panel-toggle-button"));
-  if (props.expanded || onToggle) return;
-  emit("open");
+  if (expanded.value || onToggle) return;
+  expanded.value = true;
 }
 </script>
 
