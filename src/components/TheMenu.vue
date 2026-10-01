@@ -15,7 +15,7 @@
         <p
           class="mt-4 lg:mt-8 text-white/35 tracking-[0.35em] uppercase text-[0.75rem] fade-in delay-2"
         >
-          UX design & Quality assurance
+          UX/UI design & Quality assurance
         </p>
       </div>
       <div class="mt-auto flex justify-center pb-[16vh]">
