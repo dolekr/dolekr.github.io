@@ -4,8 +4,11 @@
     :id="project.anchor"
   >
     <div
-      class="rounded-lg transition duration-300 ease-out hover:scale-[1.015] hover:shadow-[0_0_32px_rgba(20,184,166,0.35)]"
-      :class="{ 'cursor-pointer': !expanded }"
+      class="rounded-lg transition duration-300 ease-out"
+      :class="{
+        'cursor-pointer hover:scale-[1.015] hover:shadow-[0_0_32px_rgba(20,184,166,0.35)]':
+          !expanded,
+      }"
       @click="openFromCard"
     >
       <img
