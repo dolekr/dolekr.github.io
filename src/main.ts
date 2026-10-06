@@ -5,4 +5,7 @@ import App from './App.vue'
 import router from './router'
 import { preset } from './theme'
 
-createApp(App).use(PrimeVue, { theme: { preset } }).use(router).mount('#app')
+const app = createApp(App).use(PrimeVue, { theme: { preset } }).use(router)
+
+// Mount after the first route renders, so App.vue can find the page sections.
+router.isReady().then(() => app.mount('#app'))
