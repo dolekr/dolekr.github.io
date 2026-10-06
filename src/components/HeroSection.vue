@@ -8,12 +8,12 @@
           Kristyna
         </div>
         <div
-          class="uppercase tracking-[0.12em] font-extralight leading-20 text-brand fade-in delay-1"
+          class="uppercase tracking-[0.12em] font-extralight leading-20 text-brand fade-in fade-delay-1"
         >
           Dolezalova
         </div>
         <p
-          class="mt-4 lg:mt-8 text-white/35 tracking-[0.35em] uppercase text-[0.75rem] fade-in delay-2"
+          class="mt-4 lg:mt-8 text-white/35 tracking-[0.35em] uppercase text-[0.75rem] fade-in fade-delay-2"
         >
           UX/UI design & Quality assurance
         </p>
@@ -21,7 +21,7 @@
       <div class="mt-auto flex justify-center pb-[16vh]">
         <button
           @click="scrollToProjects"
-          class="px-8 py-4 border text-xl text-white/70 border-white/50 rounded-md transition duration-300 ease-in-out font-light hover:text-white hover:border-brand/70 hover:shadow-[0_0_20px_rgba(20,184,166,0.25)] fade-in delay-3 cursor-pointer bg-transparent"
+          class="px-8 py-4 border text-xl text-white/70 border-white/50 rounded-md transition duration-300 ease-in-out font-light hover:text-white hover:border-brand/70 hover:shadow-[0_0_20px_rgba(20,184,166,0.25)] fade-in fade-delay-3 cursor-pointer bg-transparent"
         >
           See my projects
         </button>
@@ -51,28 +51,5 @@ function scrollToProjects() {
     100% 100%,
     60px 60px,
     60px 60px;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in {
-  animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.delay-1 {
-  animation-delay: 0.12s;
-}
-.delay-2 {
-  animation-delay: 0.24s;
-}
-.delay-3 {
-  animation-delay: 0.36s;
 }
 </style>

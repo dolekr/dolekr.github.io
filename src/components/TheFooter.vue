@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import SectionDivider from './SectionDivider.vue'
 
 const copied = ref(false)
 
@@ -11,9 +12,7 @@ function copyEmail() {
 </script>
 
 <template>
-  <div
-    class="h-px bg-linear-to-r from-transparent via-brand/25 to-transparent"
-  ></div>
+  <SectionDivider />
   <div
     id="contact"
     class="flex items-center justify-center px-6 sm:px-[3vw] pt-6 pb-2 flex-col"

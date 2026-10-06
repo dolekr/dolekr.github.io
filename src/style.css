@@ -68,3 +68,26 @@ h3 {
   background-color: var(--color-brand);
   color: #fff;
 }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.fade-delay-1 {
+  animation-delay: 0.12s;
+}
+.fade-delay-2 {
+  animation-delay: 0.24s;
+}
+.fade-delay-3 {
+  animation-delay: 0.36s;
+}

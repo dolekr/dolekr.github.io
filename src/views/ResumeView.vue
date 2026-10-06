@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TheFooter from '../components/TheFooter.vue'
+import SectionDivider from '../components/SectionDivider.vue'
 import { education, experiences, profile, skillGroups } from '../data/resume'
 </script>
 
@@ -29,7 +30,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
 
         <!-- tagline -->
         <p
-          class="mt-4 mb-8 text-white/35 tracking-[0.35em] uppercase text-[0.75rem] fade-in delay-1"
+          class="mt-4 mb-8 text-white/35 tracking-[0.35em] uppercase text-[0.75rem] fade-in fade-delay-1"
         >
           QA &nbsp;·&nbsp; UX &nbsp;·&nbsp; PM &nbsp;·&nbsp; Frontend Dev
           &nbsp;·&nbsp; IT Analyst &nbsp;·&nbsp; Support
@@ -37,7 +38,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
 
         <!-- profile -->
         <p
-          class="text-white/50 max-w-2xl text-[0.95rem] leading-[1.85] font-light whitespace-pre-line fade-in delay-2 mx-auto"
+          class="text-white/50 max-w-2xl text-[0.95rem] leading-[1.85] font-light whitespace-pre-line fade-in fade-delay-2 mx-auto"
         >
           {{ profile }}
         </p>
@@ -45,9 +46,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
     </header>
 
     <!-- ── RULED DIVIDER ─────────────────────────────────────────── -->
-    <div
-      class="h-px bg-linear-to-r from-transparent via-brand/25 to-transparent"
-    ></div>
+    <SectionDivider />
 
     <!-- ── MAIN CONTENT ──────────────────────────────────────────── -->
     <main
@@ -295,26 +294,5 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
   --p-scrolltop-hover-color: rgba(20, 184, 166, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(8px);
-}
-
-/* ── entrance animations ────────────────────────────────────── */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in {
-  animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.delay-1 {
-  animation-delay: 0.12s;
-}
-.delay-2 {
-  animation-delay: 0.24s;
 }
 </style>

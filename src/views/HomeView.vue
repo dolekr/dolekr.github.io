@@ -3,13 +3,12 @@ import HeroSection from '../components/HeroSection.vue'
 import AboutSection from '../components/AboutSection.vue'
 import ProjectsSection from '../components/ProjectsSection.vue'
 import TheFooter from '../components/TheFooter.vue'
+import SectionDivider from '../components/SectionDivider.vue'
 </script>
 
 <template>
   <HeroSection />
-  <div
-    class="h-px bg-linear-to-r from-transparent via-brand/25 to-transparent"
-  ></div>
+  <SectionDivider />
   <AboutSection />
   <ProjectsSection />
   <TheFooter />
