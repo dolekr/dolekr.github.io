@@ -233,4 +233,10 @@ const navBg = () => scrolled.value
   border: 1px solid rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(8px);
 }
+
+/* PrimeVue's Button transition overrides ScrollTop's own fade, so restore it. */
+:deep(.p-scrolltop-enter-active),
+:deep(.p-scrolltop-leave-active) {
+  transition: opacity 0.3s;
+}
 </style>
