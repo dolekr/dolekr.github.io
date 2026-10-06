@@ -11,11 +11,7 @@
       }"
       @click="openFromCard"
     >
-      <img
-        :src="project.heroImage"
-        :alt="project.title"
-        class="rounded-t-lg"
-      />
+      <img :src="project.heroImage" :alt="project.title" class="rounded-t-lg" />
       <Panel
         :header="project.title"
         toggleable
@@ -27,7 +23,10 @@
           :class="{ 'md:flex-row': project.sideImages }"
         >
           <div class="sm:p-6">
-            <template v-for="section in project.sections" :key="section.heading">
+            <template
+              v-for="section in project.sections"
+              :key="section.heading"
+            >
               <h3 class="pb-1">{{ section.heading }}</h3>
               <p class="m-0 pb-4">{{ section.content }}</p>
               <a
@@ -76,38 +75,38 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
 defineProps({
   project: {
     type: Object,
     required: true,
   },
-});
+})
 
-const expanded = ref(false);
-const galleryVisible = ref(false);
-const activeIndex = ref(0);
+const expanded = ref(false)
+const galleryVisible = ref(false)
+const activeIndex = ref(0)
 
 /** Opens the full-screen gallery at the clicked picture. */
 function openGallery(index) {
-  activeIndex.value = index;
-  galleryVisible.value = true;
+  activeIndex.value = index
+  galleryVisible.value = true
 }
 
 /** Closes the gallery on a click anywhere except the picture or its buttons. */
 function closeOnBackdrop(event) {
-  if (event.target.closest("img, button")) return;
-  galleryVisible.value = false;
+  if (event.target.closest('img, button')) return
+  galleryVisible.value = false
 }
 
 /** Opens the card on any click, except on the panel's own toggle button, which handles itself. */
 function openFromCard(event) {
   const onToggle = event
     .composedPath()
-    .some((el) => el.classList?.contains("p-panel-toggle-button"));
-  if (expanded.value || onToggle) return;
-  expanded.value = true;
+    .some((el) => el.classList?.contains('p-panel-toggle-button'))
+  if (expanded.value || onToggle) return
+  expanded.value = true
 }
 </script>
 

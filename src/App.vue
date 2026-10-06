@@ -82,7 +82,9 @@ function handleSectionClick(item: string) {
   menuOpen.value = false
   isScrolling = true
   if (scrollingTimer) clearTimeout(scrollingTimer)
-  scrollingTimer = setTimeout(() => { isScrolling = false }, 1000)
+  scrollingTimer = setTimeout(() => {
+    isScrolling = false
+  }, 1000)
   if (route.path === '/') {
     document.getElementById(item)?.scrollIntoView({ behavior: 'smooth' })
   } else {
@@ -104,7 +106,9 @@ const navBg = () => scrolled.value
     <!-- single fixed container for nav + mobile dropdown sharing one blur surface -->
     <div
       class="fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out"
-      :class="(navBg() || menuOpen) ? 'bg-black/50 backdrop-blur-sm shadow-lg' : ''"
+      :class="
+        navBg() || menuOpen ? 'bg-black/50 backdrop-blur-sm shadow-lg' : ''
+      "
     >
       <nav class="flex w-full items-center justify-end pl-[8vw] pr-[4vw] h-14">
         <!-- hamburger button (mobile only) -->
@@ -140,7 +144,8 @@ const navBg = () => scrolled.value
                   : 'border-transparent text-white/50 hover:text-white/80'
               "
               @click="handleResumeClick"
-            >resume</RouterLink>
+              >resume</RouterLink
+            >
             <button
               v-else
               class="px-4 py-2 border rounded-md transition duration-400 ease-in-out font-light cursor-pointer bg-transparent"
@@ -150,7 +155,9 @@ const navBg = () => scrolled.value
                   : 'border-transparent text-white/50 hover:text-white/80'
               "
               @click="handleSectionClick(item)"
-            >{{ item }}</button>
+            >
+              {{ item }}
+            </button>
           </li>
         </ul>
       </nav>
@@ -172,7 +179,8 @@ const navBg = () => scrolled.value
                   : 'border-transparent text-white/50 hover:text-white/80'
               "
               @click="handleResumeClick"
-            >resume</RouterLink>
+              >resume</RouterLink
+            >
             <button
               v-else
               class="px-4 py-3 border rounded-md transition duration-200 font-light cursor-pointer bg-transparent text-center w-full"
@@ -182,7 +190,9 @@ const navBg = () => scrolled.value
                   : 'border-transparent text-white/50 hover:text-white/80'
               "
               @click="handleSectionClick(item)"
-            >{{ item }}</button>
+            >
+              {{ item }}
+            </button>
           </template>
         </div>
       </Transition>
@@ -195,7 +205,9 @@ const navBg = () => scrolled.value
 <style scoped>
 .menu-enter-active,
 .menu-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 .menu-enter-from,
 .menu-leave-to {

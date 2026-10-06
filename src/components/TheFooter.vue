@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const copied = ref(false);
+const copied = ref(false)
 
 function copyEmail() {
-  navigator.clipboard.writeText("kr.dolezalova@gmail.com");
-  copied.value = true;
-  setTimeout(() => (copied.value = false), 2000);
+  navigator.clipboard.writeText('kr.dolezalova@gmail.com')
+  copied.value = true
+  setTimeout(() => (copied.value = false), 2000)
 }
 </script>
 
 <template>
-  <div class="h-px bg-linear-to-r from-transparent via-brand/25 to-transparent"></div>
+  <div
+    class="h-px bg-linear-to-r from-transparent via-brand/25 to-transparent"
+  ></div>
   <div
     id="contact"
     class="flex items-center justify-center px-6 sm:px-[3vw] pt-6 pb-2 flex-col"

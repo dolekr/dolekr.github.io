@@ -32,7 +32,7 @@
 
 <script setup>
 function scrollToProjects() {
-  document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
