@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 function scrollToProjects() {
   document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
 }

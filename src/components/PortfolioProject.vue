@@ -15,8 +15,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ProjectCard from './ProjectCard.vue'
+import type { Project } from '../types'
 import { useReveal } from '../composables/useReveal'
 import uni from '../assets/uni.png'
 import uni1 from '../assets/uni-1.png'
@@ -40,7 +41,7 @@ import dogWeb3 from '../assets/dog-web-3.png'
 import dogWeb4 from '../assets/dog-web-4.png'
 useReveal()
 
-const projects = [
+const projects: Project[] = [
   {
     title: 'Unizone – University App',
     sideImages: true,
