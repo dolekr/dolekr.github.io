@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="root"
     id="about"
     class="about-bg flex flex-col sm:flex-row items-center justify-center px-6 sm:px-[3vw] py-16 relative overflow-hidden"
   >
@@ -37,8 +38,10 @@
 </template>
 
 <script setup lang="ts">
+import { useTemplateRef } from 'vue'
 import { useReveal } from '../composables/useReveal'
-useReveal()
+
+useReveal(useTemplateRef('root'))
 </script>
 
 <style scoped>

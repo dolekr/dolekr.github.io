@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="root"
     id="projects"
     class="flex flex-col items-center justify-center px-6 sm:px-[3vw] pt-18 text-white relative overflow-hidden"
   >
@@ -18,9 +19,10 @@
 <script setup lang="ts">
 import ProjectCard from './ProjectCard.vue'
 import { projects } from '../data/projects'
+import { useTemplateRef } from 'vue'
 import { useReveal } from '../composables/useReveal'
 
-useReveal()
+useReveal(useTemplateRef('root'))
 </script>
 
 <style scoped>

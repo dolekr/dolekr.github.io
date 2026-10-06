@@ -1,6 +1,7 @@
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, type ShallowRef } from 'vue'
 
-export function useReveal() {
+/** Fades in the `.reveal` elements inside `root` when they scroll into view. */
+export function useReveal(root: Readonly<ShallowRef<HTMLElement | null>>) {
   let observer: IntersectionObserver | null = null
 
   onMounted(() => {
@@ -16,7 +17,9 @@ export function useReveal() {
       { threshold: 0.12 },
     )
 
-    document.querySelectorAll('.reveal').forEach((el) => observer!.observe(el))
+    root.value
+      ?.querySelectorAll('.reveal')
+      .forEach((el) => observer!.observe(el))
   })
 
   onUnmounted(() => observer?.disconnect())
