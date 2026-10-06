@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter, RouterView, RouterLink } from 'vue-router'
 import ScrollTop from 'primevue/scrolltop'
 
@@ -7,7 +7,7 @@ const route = useRoute()
 const router = useRouter()
 const activeItem = ref('home')
 const scrolled = ref(false)
-const pendingScroll = ref<string | null>(null)
+let pendingScroll: string | null = null
 let scrollingTimer: ReturnType<typeof setTimeout> | null = null
 let isScrolling = false
 const menuOpen = ref(false)
@@ -45,7 +45,7 @@ watch(
       activeItem.value = 'resume'
       observer?.disconnect()
     } else {
-      nextTick(() => setupObserver())
+      setupObserver()
     }
   },
   { flush: 'post' },
@@ -54,7 +54,7 @@ watch(
 let removeAfterEach: (() => void) | null = null
 
 onMounted(() => {
-  window.addEventListener('scroll', onScroll)
+  window.addEventListener('scroll', onScroll, { passive: true })
   if (route.path === '/resume') {
     activeItem.value = 'resume'
   } else {
@@ -62,9 +62,9 @@ onMounted(() => {
   }
 
   removeAfterEach = router.afterEach((to) => {
-    if (to.path === '/' && pendingScroll.value) {
-      const target = pendingScroll.value
-      pendingScroll.value = null
+    if (to.path === '/' && pendingScroll) {
+      const target = pendingScroll
+      pendingScroll = null
       setTimeout(() => {
         document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
       }, 0)
@@ -89,7 +89,7 @@ function handleSectionClick(item: string) {
   if (route.path === '/') {
     document.getElementById(item)?.scrollIntoView({ behavior: 'smooth' })
   } else {
-    pendingScroll.value = item
+    pendingScroll = item
     router.push({ path: '/' })
   }
 }
@@ -98,8 +98,6 @@ function handleResumeClick() {
   activeItem.value = 'resume'
   menuOpen.value = false
 }
-
-const navBg = () => scrolled.value
 </script>
 
 <template>
@@ -108,7 +106,7 @@ const navBg = () => scrolled.value
     <div
       class="fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out"
       :class="
-        navBg() || menuOpen ? 'bg-black/50 backdrop-blur-sm shadow-lg' : ''
+        scrolled || menuOpen ? 'bg-black/50 backdrop-blur-sm shadow-lg' : ''
       "
     >
       <nav class="flex w-full items-center justify-end pl-[8vw] pr-[4vw] h-14">
