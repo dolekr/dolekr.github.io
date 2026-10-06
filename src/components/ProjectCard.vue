@@ -12,7 +12,7 @@
       @click="openFromCard"
     >
       <img
-        :src="resolveImage(project.heroImage)"
+        :src="project.heroImage"
         :alt="project.title"
         class="rounded-t-lg"
       />
@@ -45,8 +45,8 @@
             <img
               v-for="(img, index) in project.detailImages"
               :key="img"
-              :src="resolveImage(img)"
-              :alt="img"
+              :src="img"
+              :alt="`${project.title} – picture ${activeIndex + 1}`"
               class="rounded-lg cursor-zoom-in"
               @click="openGallery(index)"
             />
@@ -66,8 +66,8 @@
     >
       <template #item="{ item }">
         <img
-          :src="resolveImage(item)"
-          :alt="item"
+          :src="item"
+          :alt="`${project.title} – picture ${activeIndex + 1}`"
           class="max-w-[90vw] max-h-[90vh] rounded-lg"
         />
       </template>
@@ -77,13 +77,6 @@
 
 <script setup>
 import { ref } from "vue";
-
-const images = import.meta.glob("../assets/*", { eager: true });
-
-function resolveImage(filename) {
-  const match = images[`../assets/${filename}`];
-  return match ? match.default : "";
-}
 
 defineProps({
   project: {

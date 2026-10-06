@@ -18,14 +18,34 @@
 <script setup>
 import ProjectCard from "./ProjectCard.vue";
 import { useReveal } from "../composables/useReveal";
+import uni from "../assets/uni.png";
+import uni1 from "../assets/uni-1.png";
+import uni3 from "../assets/uni-3.png";
+import uni5 from "../assets/uni-5.png";
+import uni6 from "../assets/uni-6.png";
+import finely from "../assets/finely.png";
+import finelyPrototype from "../assets/finely-prototype.gif";
+import finely1 from "../assets/finely-1.png";
+import finely2 from "../assets/finely-2.png";
+import finely3 from "../assets/finely-3.png";
+import finely4 from "../assets/finely-4.png";
+import dogFoodApp from "../assets/dog-food-app.png";
+import dogFoodApp1 from "../assets/dog-food-app-1.png";
+import dogFoodApp3 from "../assets/dog-food-app-3.png";
+import dogFoodApp4 from "../assets/dog-food-app-4.png";
+import dogWeb from "../assets/dog-web.png";
+import dogWeb1 from "../assets/dog-web-1.png";
+import dogWeb2 from "../assets/dog-web-2.png";
+import dogWeb3 from "../assets/dog-web-3.png";
+import dogWeb4 from "../assets/dog-web-4.png";
 useReveal();
 
 const projects = [
   {
     title: "Unizone – University App",
     sideImages: true,
-    heroImage: "uni.png",
-    detailImages: ["uni-1.png", "uni-3.png", "uni-5.png", "uni-6.png"],
+    heroImage: uni,
+    detailImages: [uni1, uni3, uni5, uni6],
     sections: [
       {
         heading: "Overview",
@@ -58,13 +78,13 @@ const projects = [
   {
     title: "Finely — Parking Fines App",
     sideImages: false,
-    heroImage: "finely.png",
+    heroImage: finely,
     detailImages: [
-      "finely-prototype.gif",
-      "finely-1.png",
-      "finely-2.png",
-      "finely-3.png",
-      "finely-4.png",
+      finelyPrototype,
+      finely1,
+      finely2,
+      finely3,
+      finely4,
     ],
     sections: [
       {
@@ -99,11 +119,11 @@ const projects = [
     title: "Dog Food Ordering App",
     anchor: "dog-food-app",
     sideImages: true,
-    heroImage: "dog-food-app.png",
+    heroImage: dogFoodApp,
     detailImages: [
-      "dog-food-app-1.png",
-      "dog-food-app-3.png",
-      "dog-food-app-4.png",
+      dogFoodApp1,
+      dogFoodApp3,
+      dogFoodApp4,
     ],
     sections: [
       {
@@ -141,12 +161,12 @@ const projects = [
   {
     title: "Full Bonkers – Dog Food E-Shop",
     sideImages: false,
-    heroImage: "dog-web.png",
+    heroImage: dogWeb,
     detailImages: [
-      "dog-web-1.png",
-      "dog-web-2.png",
-      "dog-web-3.png",
-      "dog-web-4.png",
+      dogWeb1,
+      dogWeb2,
+      dogWeb3,
+      dogWeb4,
     ],
     sections: [
       {
