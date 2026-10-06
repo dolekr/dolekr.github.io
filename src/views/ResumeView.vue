@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useTemplateRef } from 'vue'
-import ScrollTop from 'primevue/scrolltop'
 import TheFooter from '../components/TheFooter.vue'
 import SectionDivider from '../components/SectionDivider.vue'
 import { education, experiences, profile, skillGroups } from '../data/resume'
@@ -179,7 +178,6 @@ useReveal(useTemplateRef('root'))
     </main>
 
     <TheFooter />
-    <ScrollTop />
   </div>
 </template>
 
@@ -289,23 +287,5 @@ useReveal(useTemplateRef('root'))
   height: 1px;
   background: color-mix(in srgb, var(--color-brand) 40%, transparent);
   flex-shrink: 0;
-}
-
-/* ── scroll-to-top button ───────────────────────────────────── */
-:deep(.p-scrolltop) {
-  --p-scrolltop-background: rgba(255, 255, 255, 0.03);
-  --p-scrolltop-hover-background: color-mix(
-    in srgb,
-    var(--color-brand) 15%,
-    transparent
-  );
-  --p-scrolltop-color: rgba(255, 255, 255, 0.35);
-  --p-scrolltop-hover-color: color-mix(
-    in srgb,
-    var(--color-brand) 90%,
-    transparent
-  );
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(8px);
 }
 </style>

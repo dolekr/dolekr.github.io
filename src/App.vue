@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useRoute, useRouter, RouterView, RouterLink } from 'vue-router'
+import ScrollTop from 'primevue/scrolltop'
 
 const route = useRoute()
 const router = useRouter()
@@ -199,6 +200,7 @@ const navBg = () => scrolled.value
     </div>
 
     <RouterView />
+    <ScrollTop />
   </div>
 </template>
 
@@ -213,5 +215,22 @@ const navBg = () => scrolled.value
 .menu-leave-to {
   opacity: 0;
   transform: translateY(-6px);
+}
+
+:deep(.p-scrolltop) {
+  --p-scrolltop-background: rgba(255, 255, 255, 0.03);
+  --p-scrolltop-hover-background: color-mix(
+    in srgb,
+    var(--color-brand) 15%,
+    transparent
+  );
+  --p-scrolltop-color: rgba(255, 255, 255, 0.35);
+  --p-scrolltop-hover-color: color-mix(
+    in srgb,
+    var(--color-brand) 90%,
+    transparent
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
 }
 </style>
