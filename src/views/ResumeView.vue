@@ -180,7 +180,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
 </template>
 
 <style scoped>
-/* ── hero background (matches TheMenu hero-bg) ──────────────── */
+/* ── hero background (matches HeroSection hero-bg) ──────────────── */
 .resume-hero {
   background:
     radial-gradient(
