@@ -21,7 +21,7 @@
       <div class="mt-auto flex justify-center pb-[16vh]">
         <button
           @click="scrollToProjects"
-          class="px-8 py-4 border text-xl text-white/70 border-white/50 rounded-md transition duration-300 ease-in-out font-light hover:text-white hover:border-brand/70 hover:shadow-[0_0_20px_rgba(20,184,166,0.25)] fade-in fade-delay-3 cursor-pointer bg-transparent"
+          class="px-8 py-4 border text-xl text-white/70 border-white/50 rounded-md transition duration-300 ease-in-out font-light hover:text-white hover:border-brand/70 hover:shadow-[0_0_20px] hover:shadow-brand/25 fade-in fade-delay-3 cursor-pointer bg-transparent"
         >
           See my projects
         </button>
@@ -41,12 +41,12 @@ function scrollToProjects() {
   background:
     radial-gradient(
       ellipse 70% 60% at 80% 85%,
-      rgba(20, 184, 166, 0.13) 0%,
+      color-mix(in srgb, var(--color-brand) 13%, transparent) 0%,
       transparent 65%
     ),
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    #0a0a0a;
+    var(--color-base);
   background-size:
     100% 100%,
     60px 60px,

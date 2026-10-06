@@ -184,12 +184,12 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
   background:
     radial-gradient(
       ellipse 55% 70% at 90% 50%,
-      rgba(20, 184, 166, 0.1) 0%,
+      color-mix(in srgb, var(--color-brand) 10%, transparent) 0%,
       transparent 65%
     ),
     linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    #0a0a0a;
+    var(--color-base);
   background-size:
     100% 100%,
     60px 60px,
@@ -211,7 +211,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
   display: block;
   width: 1.5rem;
   height: 1px;
-  background: rgba(20, 184, 166, 0.45);
+  background: color-mix(in srgb, var(--color-brand) 45%, transparent);
   flex-shrink: 0;
 }
 
@@ -241,9 +241,9 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
   line-height: 1.6;
 }
 .skill-chip:hover {
-  border-color: rgba(20, 184, 166, 0.28);
+  border-color: color-mix(in srgb, var(--color-brand) 28%, transparent);
   color: rgba(255, 255, 255, 0.78);
-  background: rgba(20, 184, 166, 0.05);
+  background: color-mix(in srgb, var(--color-brand) 5%, transparent);
 }
 
 /* ── timeline dot ───────────────────────────────────────────── */
@@ -251,17 +251,17 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(20, 184, 166, 0.7);
+  background: color-mix(in srgb, var(--color-brand) 70%, transparent);
   flex-shrink: 0;
   box-shadow:
-    0 0 0 2px rgba(20, 184, 166, 0.12),
-    0 0 10px rgba(20, 184, 166, 0.35);
+    0 0 0 2px color-mix(in srgb, var(--color-brand) 12%, transparent),
+    0 0 10px color-mix(in srgb, var(--color-brand) 35%, transparent);
   transition: box-shadow 0.3s;
 }
 .group\/exp:hover .timeline-dot {
   box-shadow:
-    0 0 0 3px rgba(20, 184, 166, 0.18),
-    0 0 16px rgba(20, 184, 166, 0.55);
+    0 0 0 3px color-mix(in srgb, var(--color-brand) 18%, transparent),
+    0 0 16px color-mix(in srgb, var(--color-brand) 55%, transparent);
 }
 
 /* ── role badge ─────────────────────────────────────────────── */
@@ -272,26 +272,34 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(20, 184, 166, 0.6);
+  color: color-mix(in srgb, var(--color-brand) 60%, transparent);
   padding: 0.25rem 0.6rem 0.25rem 0.4rem;
-  border: 1px solid rgba(20, 184, 166, 0.15);
-  background: rgba(20, 184, 166, 0.04);
+  border: 1px solid color-mix(in srgb, var(--color-brand) 15%, transparent);
+  background: color-mix(in srgb, var(--color-brand) 4%, transparent);
   border-radius: 0.2rem;
 }
 .role-tick {
   display: block;
   width: 0.5rem;
   height: 1px;
-  background: rgba(20, 184, 166, 0.4);
+  background: color-mix(in srgb, var(--color-brand) 40%, transparent);
   flex-shrink: 0;
 }
 
 /* ── scroll-to-top button ───────────────────────────────────── */
 :deep(.p-scrolltop) {
   --p-scrolltop-background: rgba(255, 255, 255, 0.03);
-  --p-scrolltop-hover-background: rgba(20, 184, 166, 0.15);
+  --p-scrolltop-hover-background: color-mix(
+    in srgb,
+    var(--color-brand) 15%,
+    transparent
+  );
   --p-scrolltop-color: rgba(255, 255, 255, 0.35);
-  --p-scrolltop-hover-color: rgba(20, 184, 166, 0.9);
+  --p-scrolltop-hover-color: color-mix(
+    in srgb,
+    var(--color-brand) 90%,
+    transparent
+  );
   border: 1px solid rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(8px);
 }

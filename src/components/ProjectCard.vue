@@ -6,7 +6,7 @@
     <div
       class="rounded-lg transition-transform duration-300 ease-out"
       :class="{
-        'cursor-pointer hover:scale-[1.015] hover:shadow-[0_0_32px_rgba(20,184,166,0.35)]':
+        'cursor-pointer hover:scale-[1.015] hover:shadow-[0_0_32px] hover:shadow-brand/35':
           !expanded,
       }"
       @click="openFromCard"
@@ -126,7 +126,7 @@ h3::after {
   display: block;
   width: 1.5rem;
   height: 1px;
-  background: rgba(20, 184, 166, 0.45);
+  background: color-mix(in srgb, var(--color-brand) 45%, transparent);
   flex-shrink: 0;
 }
 

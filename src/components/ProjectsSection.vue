@@ -46,7 +46,7 @@ useReveal()
   color: rgba(255, 255, 255, 0.4);
 }
 :deep(.p-panel-toggle-button:hover) {
-  color: rgba(20, 184, 166, 0.8);
-  background: rgba(20, 184, 166, 0.08) !important;
+  color: color-mix(in srgb, var(--color-brand) 80%, transparent);
+  background: color-mix(in srgb, var(--color-brand) 8%, transparent) !important;
 }
 </style>

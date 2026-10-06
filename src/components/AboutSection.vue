@@ -43,7 +43,7 @@ useReveal()
 
 <style scoped>
 .about-bg {
-  background: #0a0a0a;
+  background: var(--color-base);
 }
 
 .photo-wrap {
@@ -59,8 +59,8 @@ useReveal()
   padding: 1px;
   background: linear-gradient(
     315deg,
-    rgba(20, 184, 166, 0.5) 0%,
-    rgba(20, 184, 166, 0.05) 50%,
+    color-mix(in srgb, var(--color-brand) 50%, transparent) 0%,
+    color-mix(in srgb, var(--color-brand) 5%, transparent) 50%,
     transparent 100%
   );
   -webkit-mask:
@@ -86,9 +86,17 @@ useReveal()
 
 :deep(.p-scrolltop) {
   --p-scrolltop-background: rgba(255, 255, 255, 0.03);
-  --p-scrolltop-hover-background: rgba(20, 184, 166, 0.15);
+  --p-scrolltop-hover-background: color-mix(
+    in srgb,
+    var(--color-brand) 15%,
+    transparent
+  );
   --p-scrolltop-color: rgba(255, 255, 255, 0.35);
-  --p-scrolltop-hover-color: rgba(20, 184, 166, 0.9);
+  --p-scrolltop-hover-color: color-mix(
+    in srgb,
+    var(--color-brand) 90%,
+    transparent
+  );
   border: 1px solid rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(8px);
 }
