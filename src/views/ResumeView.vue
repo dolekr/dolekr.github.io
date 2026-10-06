@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTemplateRef } from 'vue'
+import ScrollTop from 'primevue/scrolltop'
 import TheFooter from '../components/TheFooter.vue'
 import SectionDivider from '../components/SectionDivider.vue'
 import { education, experiences, profile, skillGroups } from '../data/resume'

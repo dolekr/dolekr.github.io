@@ -39,6 +39,7 @@
 
 <script setup lang="ts">
 import { useTemplateRef } from 'vue'
+import ScrollTop from 'primevue/scrolltop'
 import { useReveal } from '../composables/useReveal'
 
 useReveal(useTemplateRef('root'))

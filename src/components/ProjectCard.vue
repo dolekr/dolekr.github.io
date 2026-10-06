@@ -76,6 +76,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import Panel from 'primevue/panel'
+import Galleria from 'primevue/galleria'
 import type { Project } from '../types'
 
 defineProps<{ project: Project }>()
