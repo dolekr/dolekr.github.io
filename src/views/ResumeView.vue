@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { useTemplateRef } from 'vue'
 import TheFooter from '../components/TheFooter.vue'
 import SectionDivider from '../components/SectionDivider.vue'
 import { education, experiences, profile, skillGroups } from '../data/resume'
+import { useReveal } from '../composables/useReveal'
+
+useReveal(useTemplateRef('root'))
 </script>
 
 <template>
-  <div class="bg-base text-white min-h-screen">
+  <div ref="root" class="bg-base text-white min-h-screen">
     <!-- ── HERO HEADER ───────────────────────────────────────────── -->
     <header class="resume-hero relative overflow-hidden pt-28 pb-20 px-[8vw]">
       <!-- decorative teal glow blob -->
@@ -17,12 +21,12 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
         <!-- name -->
         <div class="fade-in">
           <div
-            class="uppercase tracking-[0.12em] font-extralight leading-none text-white/90 text-[clamp(2.4rem,7vw,5rem)]"
+            class="uppercase tracking-[0.12em] font-extralight leading-none text-brand text-[clamp(2.4rem,7vw,5rem)]"
           >
             Kristyna
           </div>
           <div
-            class="uppercase tracking-[0.12em] font-extralight leading-none text-white/90 text-[clamp(2.4rem,7vw,5rem)] mb-1"
+            class="uppercase tracking-[0.12em] font-extralight leading-none text-brand text-[clamp(2.4rem,7vw,5rem)] mb-1"
           >
             Dolezalova
           </div>
@@ -55,7 +59,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
       <!-- ── LEFT SIDEBAR ── -->
       <aside class="flex flex-col gap-14 order-2 lg:order-1">
         <!-- SKILLS -->
-        <section class="order-2">
+        <section class="order-2 reveal">
           <div class="section-label">Skills</div>
           <div class="mt-5 space-y-5">
             <div v-for="group in skillGroups" :key="group.category">
@@ -73,7 +77,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
         </section>
 
         <!-- EDUCATION -->
-        <section class="order-1">
+        <section class="order-1 reveal">
           <div class="section-label">Education</div>
           <div class="mt-5 space-y-3.5">
             <div
@@ -111,7 +115,7 @@ import { education, experiences, profile, skillGroups } from '../data/resume'
           <div
             v-for="exp in experiences"
             :key="exp.company"
-            class="flex gap-6 group/exp"
+            class="flex gap-6 group/exp reveal"
           >
             <!-- timeline spine -->
             <div class="flex flex-col items-center shrink-0 pt-[5px]">
