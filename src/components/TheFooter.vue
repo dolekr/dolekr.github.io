@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import SectionDivider from './SectionDivider.vue'
 
 const copied = ref(false)
+const year = new Date().getFullYear()
 
 function copyEmail() {
   navigator.clipboard.writeText('kr.dolezalova@gmail.com')
@@ -48,6 +49,6 @@ function copyEmail() {
         <div>linkedin.com/in/kr-dolezalova</div>
       </a>
     </div>
-    <p class="text-xs text-white/40 pt-3">© 2026 Kristýna Doležalová</p>
+    <p class="text-xs text-white/40 pt-3">© {{ year }} Kristýna Doležalová</p>
   </div>
 </template>
