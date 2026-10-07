@@ -91,3 +91,21 @@ h3 {
 .fade-delay-3 {
   animation-delay: 0.36s;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

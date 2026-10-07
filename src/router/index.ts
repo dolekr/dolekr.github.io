@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { preferredScrollBehavior } from '../motion'
 import HomeView from '../views/HomeView.vue'
 import ResumeView from '../views/ResumeView.vue'
 
@@ -14,7 +15,7 @@ const router = createRouter({
   ],
   scrollBehavior(to) {
     if (to.hash) {
-      return { el: to.hash, behavior: 'smooth' }
+      return { el: to.hash, behavior: preferredScrollBehavior() }
     }
     return { top: 0, behavior: 'instant' }
   },

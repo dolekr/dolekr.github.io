@@ -2,13 +2,14 @@
 import { RouterView } from 'vue-router'
 import ScrollTop from 'primevue/scrolltop'
 import TheNavbar from './components/TheNavbar.vue'
+import { preferredScrollBehavior } from './motion'
 </script>
 
 <template>
   <div class="bg-base">
     <TheNavbar />
     <RouterView />
-    <ScrollTop />
+    <ScrollTop :behavior="preferredScrollBehavior()" />
   </div>
 </template>
 

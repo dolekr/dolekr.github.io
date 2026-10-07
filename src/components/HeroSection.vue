@@ -31,8 +31,12 @@
 </template>
 
 <script setup lang="ts">
+import { preferredScrollBehavior } from '../motion'
+
 function scrollToProjects() {
-  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+  document
+    .getElementById('projects')
+    ?.scrollIntoView({ behavior: preferredScrollBehavior() })
 }
 </script>
 

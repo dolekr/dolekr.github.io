@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
+import { preferredScrollBehavior } from '../motion'
 
 const route = useRoute()
 const router = useRouter()
@@ -65,7 +66,9 @@ onMounted(() => {
       const target = pendingScroll
       pendingScroll = null
       setTimeout(() => {
-        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
+        document
+          .getElementById(target)
+          ?.scrollIntoView({ behavior: preferredScrollBehavior() })
       }, 0)
     }
   })
@@ -86,7 +89,9 @@ function handleSectionClick(item: string) {
     isScrolling = false
   }, 1000)
   if (route.path === '/') {
-    document.getElementById(item)?.scrollIntoView({ behavior: 'smooth' })
+    document
+      .getElementById(item)
+      ?.scrollIntoView({ behavior: preferredScrollBehavior() })
   } else {
     pendingScroll = item
     router.push({ path: '/' })

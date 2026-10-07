@@ -60,6 +60,23 @@ test('resume lists every experience and links back to projects', async ({
   await expect(page.getByRole('heading', { name: 'Projects' })).toBeInViewport()
 })
 
+test.describe('with reduced motion', () => {
+  test.use({ reducedMotion: 'reduce' })
+
+  test('content is visible at once and the menu jumps', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.locator('#about .reveal').first()).toHaveCSS(
+      'opacity',
+      '1',
+    )
+    await menuItem(page, 'projects').click()
+    const projectsTop = await page
+      .locator('#projects')
+      .evaluate((el) => el.getBoundingClientRect().top)
+    expect(Math.abs(projectsTop)).toBeLessThan(2)
+  })
+})
+
 test('scroll-to-top button brings the page back up', async ({ page }) => {
   await page.goto('/')
   const scrollTop = page.locator('.p-scrolltop')
