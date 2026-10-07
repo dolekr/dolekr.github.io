@@ -41,14 +41,20 @@
             class="grid grid-cols-2 gap-4 sm:p-6 mt-4 sm:mt-0 ml-auto items-center min-w-[40%]"
             :class="project.sideImages ? 'md:grid-cols-1' : 'md:grid-cols-2'"
           >
-            <img
+            <button
               v-for="(img, index) in project.detailImages"
               :key="img"
-              :src="img"
-              :alt="`${project.title} – picture ${index + 1}`"
-              class="rounded-lg cursor-zoom-in"
+              type="button"
+              :aria-label="`Open ${project.title} picture ${index + 1} in full screen`"
+              class="p-0 border-0 bg-transparent rounded-lg cursor-zoom-in"
               @click="openGallery(index)"
-            />
+            >
+              <img
+                :src="img"
+                :alt="`${project.title} – picture ${index + 1}`"
+                class="rounded-lg"
+              />
+            </button>
           </div>
         </div>
       </Panel>

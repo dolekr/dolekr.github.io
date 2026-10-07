@@ -60,6 +60,30 @@ test('resume lists every experience and links back to projects', async ({
   await expect(page.getByRole('heading', { name: 'Projects' })).toBeInViewport()
 })
 
+test('keyboard users can copy the email and open the gallery', async ({
+  page,
+}) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: 'Copy email address' }).focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByText('Copied!')).toBeVisible()
+
+  await page
+    .getByRole('button', { name: 'Unizone – University App', exact: true })
+    .focus()
+  await page.keyboard.press('Enter')
+  await page
+    .getByRole('button', {
+      name: 'Open Unizone – University App picture 2 in full screen',
+    })
+    .focus()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('.p-galleria img')).toHaveAttribute(
+    'alt',
+    'Unizone – University App – picture 2',
+  )
+})
+
 test.describe('with reduced motion', () => {
   test.use({ reducedMotion: 'reduce' })
 

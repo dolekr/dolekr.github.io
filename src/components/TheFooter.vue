@@ -22,22 +22,28 @@ function copyEmail() {
       <h3 class="mb-2">Contact</h3>
     </div>
     <div class="flex flex-col sm:flex-row gap-2 sm:gap-10 text-xs">
-      <div
-        class="relative flex flex-col items-center justify-center border border-transparent rounded-md p-3 transition duration-300 ease-in-out cursor-pointer text-white/70 hover:text-brand"
+      <button
+        type="button"
+        class="relative flex flex-col items-center justify-center border border-transparent rounded-md p-3 transition duration-300 ease-in-out cursor-pointer bg-transparent text-white/70 hover:text-brand"
         @click="copyEmail"
       >
         <div>
           <i class="pi pi-at pb-2" style="font-size: 1rem"></i>
         </div>
-        <div>kr.dolezalova@gmail.com</div>
+        <div>
+          <span class="sr-only">Copy email address </span>
+          kr.dolezalova@gmail.com
+        </div>
 
         <div
-          v-if="copied"
-          class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-white text-black px-2 py-1 rounded whitespace-nowrap"
+          role="status"
+          class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs whitespace-nowrap"
         >
-          Copied!
+          <span v-if="copied" class="bg-white text-black px-2 py-1 rounded">
+            Copied!
+          </span>
         </div>
-      </div>
+      </button>
       <a
         href="https://www.linkedin.com/in/kr-dolezalova"
         target="_blank"
