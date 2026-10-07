@@ -19,18 +19,18 @@ useReveal(useTemplateRef('root'))
 
       <div class="relative max-w-7xl mx-auto text-center">
         <!-- name -->
-        <div class="fade-in">
-          <div
-            class="uppercase tracking-[0.12em] font-extralight leading-none text-brand text-[clamp(2.4rem,7vw,5rem)]"
+        <h1 class="fade-in">
+          <span
+            class="block uppercase tracking-[0.12em] font-extralight leading-none text-brand text-[clamp(2.4rem,7vw,5rem)]"
           >
             Kristyna
-          </div>
-          <div
-            class="uppercase tracking-[0.12em] font-extralight leading-none text-brand text-[clamp(2.4rem,7vw,5rem)] mb-1"
+          </span>
+          <span
+            class="block uppercase tracking-[0.12em] font-extralight leading-none text-brand text-[clamp(2.4rem,7vw,5rem)] mb-1"
           >
             Dolezalova
-          </div>
-        </div>
+          </span>
+        </h1>
 
         <!-- tagline -->
         <p
@@ -60,10 +60,10 @@ useReveal(useTemplateRef('root'))
       <aside class="flex flex-col gap-14 order-2 lg:order-1">
         <!-- SKILLS -->
         <section class="order-2 reveal">
-          <div class="section-label">Skills</div>
+          <h2 class="section-label mb-0">Skills</h2>
           <div class="mt-5 space-y-5">
             <div v-for="group in skillGroups" :key="group.category">
-              <div class="category-label">{{ group.category }}</div>
+              <h3 class="category-label">{{ group.category }}</h3>
               <div class="mt-2 flex flex-wrap gap-1.5">
                 <span
                   v-for="skill in group.items"
@@ -78,7 +78,7 @@ useReveal(useTemplateRef('root'))
 
         <!-- EDUCATION -->
         <section class="order-1 reveal">
-          <div class="section-label">Education</div>
+          <h2 class="section-label mb-0">Education</h2>
           <div class="mt-5 space-y-3.5">
             <div
               v-for="edu in education"
@@ -109,7 +109,7 @@ useReveal(useTemplateRef('root'))
 
       <!-- ── RIGHT: EXPERIENCE ── -->
       <section class="order-1 lg:order-2">
-        <div class="section-label mb-8">Experience</div>
+        <h2 class="section-label mb-8">Experience</h2>
 
         <div class="space-y-0">
           <div
@@ -205,6 +205,7 @@ useReveal(useTemplateRef('root'))
   align-items: center;
   gap: 0.75rem;
   font-size: 0.7rem;
+  font-weight: inherit;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
@@ -221,6 +222,7 @@ useReveal(useTemplateRef('root'))
 /* ── category label ─────────────────────────────────────────── */
 .category-label {
   font-size: 0.68rem;
+  font-weight: inherit;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.22);

@@ -2,16 +2,18 @@
   <div id="home" class="hero-bg flex flex-col h-screen w-full">
     <div class="flex-1 flex flex-col px-[8vw] pt-[24vh]">
       <div class="text-[clamp(2rem,10vw,6rem)]">
-        <div
-          class="uppercase tracking-[0.12em] font-extralight text-brand fade-in"
-        >
-          Kristyna
-        </div>
-        <div
-          class="uppercase tracking-[0.12em] font-extralight leading-20 text-brand fade-in fade-delay-1"
-        >
-          Dolezalova
-        </div>
+        <h1>
+          <span
+            class="block uppercase tracking-[0.12em] font-extralight text-brand fade-in"
+          >
+            Kristyna
+          </span>
+          <span
+            class="block uppercase tracking-[0.12em] font-extralight leading-20 text-brand fade-in fade-delay-1"
+          >
+            Dolezalova
+          </span>
+        </h1>
         <p
           class="mt-4 lg:mt-8 text-white/35 tracking-[0.35em] uppercase text-[0.75rem] fade-in fade-delay-2"
         >

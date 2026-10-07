@@ -19,7 +19,7 @@ function copyEmail() {
     class="flex items-center justify-center px-6 sm:px-[3vw] pt-6 pb-2 flex-col"
   >
     <div class="flex max-w-md text-white">
-      <h3 class="mb-2">Contact</h3>
+      <h2 class="mb-2 text-[1.5rem]">Contact</h2>
     </div>
     <div class="flex flex-col sm:flex-row gap-2 sm:gap-10 text-xs">
       <button

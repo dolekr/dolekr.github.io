@@ -12,6 +12,24 @@ test('home page shows all sections', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Projects' })).toBeVisible()
 })
 
+const headings = (page: Page, level: number) =>
+  page.getByRole('heading', { level }).allInnerTexts()
+
+test('pages have one h1 and a section heading outline', async ({ page }) => {
+  await page.goto('/')
+  expect(await headings(page, 1)).toEqual(['KRISTYNA\nDOLEZALOVA'])
+  expect(await headings(page, 2)).toEqual(['ABOUT', 'PROJECTS', 'CONTACT'])
+
+  await page.goto('/resume')
+  expect(await headings(page, 1)).toEqual(['KRISTYNA\nDOLEZALOVA'])
+  expect(await headings(page, 2)).toEqual([
+    'SKILLS',
+    'EDUCATION',
+    'EXPERIENCE',
+    'CONTACT',
+  ])
+})
+
 test('menu highlight follows scrolling from the first load', async ({
   page,
 }) => {
