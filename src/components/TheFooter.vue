@@ -47,12 +47,16 @@ function copyEmail() {
       <a
         href="https://www.linkedin.com/in/kr-dolezalova"
         target="_blank"
+        rel="noopener"
         class="flex flex-col items-center justify-center border border-transparent rounded-md p-3 transition duration-300 ease-in-out text-white/70 hover:text-brand"
       >
         <div>
           <i class="pi pi-linkedin pb-2" style="font-size: 1rem"></i>
         </div>
-        <div>linkedin.com/in/kr-dolezalova</div>
+        <div>
+          linkedin.com/in/kr-dolezalova
+          <span class="sr-only">(opens in a new tab)</span>
+        </div>
       </a>
     </div>
     <p class="text-xs text-white/40 pt-3">© {{ year }} Kristýna Doležalová</p>

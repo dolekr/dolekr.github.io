@@ -118,6 +118,8 @@ function handleResumeClick() {
         class="sm:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 bg-transparent border-none cursor-pointer"
         @click="menuOpen = !menuOpen"
         aria-label="Toggle menu"
+        :aria-expanded="menuOpen"
+        aria-controls="mobile-menu"
       >
         <span
           class="block w-5 h-px bg-white/60 transition-all duration-300"
@@ -169,6 +171,7 @@ function handleResumeClick() {
     <Transition name="menu">
       <div
         v-if="menuOpen"
+        id="mobile-menu"
         class="sm:hidden border-t border-white/8 py-4 px-[8vw] flex flex-col gap-2"
       >
         <template v-for="item in allNavItems" :key="item">

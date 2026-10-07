@@ -29,7 +29,11 @@
         style="transition-delay: 0.15s"
       >
         <div class="photo-wrap">
-          <img src="../assets/pfp.jpg" alt="profile picture" class="photo" />
+          <img
+            src="../assets/pfp.jpg"
+            alt="Portrait of Kristýna Doležalová"
+            class="photo"
+          />
         </div>
       </div>
     </div>

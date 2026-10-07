@@ -102,6 +102,32 @@ test('keyboard users can copy the email and open the gallery', async ({
   )
 })
 
+test.describe('on a phone', () => {
+  test.use({ viewport: { width: 390, height: 800 } })
+
+  test('menu button reports whether the menu is open', async ({ page }) => {
+    await page.goto('/')
+    const toggle = page.getByRole('button', { name: 'Toggle menu' })
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    await toggle.click()
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    const menuId = await toggle.getAttribute('aria-controls')
+    await expect(page.locator(`#${menuId}`)).toBeVisible()
+  })
+})
+
+test('photo and external link are described for screen readers', async ({
+  page,
+}) => {
+  await page.goto('/')
+  await expect(
+    page.getByRole('img', { name: 'Portrait of Kristýna Doležalová' }),
+  ).toBeAttached()
+  await expect(
+    page.getByRole('link', { name: /LinkedIn.*opens in a new tab/i }),
+  ).toBeAttached()
+})
+
 test.describe('with reduced motion', () => {
   test.use({ reducedMotion: 'reduce' })
 
