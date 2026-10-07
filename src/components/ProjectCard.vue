@@ -45,7 +45,7 @@
               v-for="(img, index) in project.detailImages"
               :key="img"
               :src="img"
-              :alt="`${project.title} – picture ${activeIndex + 1}`"
+              :alt="`${project.title} – picture ${index + 1}`"
               class="rounded-lg cursor-zoom-in"
               @click="openGallery(index)"
             />
