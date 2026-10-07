@@ -30,7 +30,7 @@
       >
         <div class="photo-wrap">
           <img
-            src="../assets/pfp.jpg"
+            src="../assets/pfp.webp"
             alt="Portrait of Kristýna Doležalová"
             class="photo"
           />
