@@ -16,6 +16,7 @@ Vue 3 · TypeScript · Vite · Tailwind CSS · PrimeVue · Vue Router
 npm install
 npm run dev           # start the dev server
 npm run build         # type-check and build to dist/
+npm test              # build and run the Playwright tests
 npm run format        # format the code with Prettier
 ```
 
@@ -24,6 +25,7 @@ npm run format        # format the code with Prettier
 - `src/data/` – project case studies and resume content
 - `src/components/` – page sections and UI components
 - `src/views/` – Home and Resume pages
+- `tests/` – Playwright end-to-end tests
 
 ## Deployment
 

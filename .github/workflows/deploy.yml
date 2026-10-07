@@ -35,6 +35,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Test
+        run: npx playwright test
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist

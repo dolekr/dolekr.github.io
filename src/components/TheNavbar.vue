@@ -151,6 +151,7 @@ function handleResumeClick() {
                 ? 'border-white/40 text-white/80 hover:text-white'
                 : 'border-transparent text-white/50 hover:text-white/80'
             "
+            :aria-current="activeItem === item ? 'location' : undefined"
             @click="handleSectionClick(item)"
           >
             {{ item }}
@@ -186,6 +187,7 @@ function handleResumeClick() {
                 ? 'border-white/40 text-white/80'
                 : 'border-transparent text-white/50 hover:text-white/80'
             "
+            :aria-current="activeItem === item ? 'location' : undefined"
             @click="handleSectionClick(item)"
           >
             {{ item }}
