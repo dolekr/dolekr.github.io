@@ -45,7 +45,7 @@ export const projects: Project[] = [
       {
         heading: 'My Role',
         content:
-          'UX research and feature definition\n• Wireframing\n• High-fidelity designs\n• Interactive prototyping\n• Collaboration with developers\n• Iterative improvements based on student feedback',
+          'UX research and feature definition • Wireframing • High-fidelity designs • Interactive prototyping • Collaboration with developers • Iterative improvements based on student feedback',
       },
       {
         heading: 'What I Learned',
@@ -114,7 +114,7 @@ export const projects: Project[] = [
       {
         heading: 'My Role',
         content:
-          'Wireframing (paper & digital)\n• Low- and high-fidelity prototyping\n• Usability testing\n• Accessibility considerations',
+          'Wireframing (paper & digital) • Low- and high-fidelity prototyping • Usability testing • Accessibility considerations',
       },
       {
         heading: 'Usability Study',
@@ -154,7 +154,7 @@ export const projects: Project[] = [
       {
         heading: 'My Role',
         content:
-          'Wireframing (paper & digital)\n•  Low- and high-fidelity prototyping\n• Responsive design',
+          'Wireframing (paper & digital) • Low- and high-fidelity prototyping • Responsive design',
       },
       {
         heading: 'What I Learned',
